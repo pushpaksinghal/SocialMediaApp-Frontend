@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  --earth-deep:    #0a2a1a;
+  --earth-forest:  #0d4a2a;
+  --earth-green:   #1a7a45;
+  --earth-emerald: #22c55e;
+  --earth-mint:    #86efac;
+  --ocean-deep:    #0c1f3f;
+  --ocean-blue:    #0d4080;
+  --ocean-teal:    #0891b2;
+  --ocean-sky:     #38bdf8;
+  --ocean-light:   #bae6fd;
+  --surface-dark:  #0f1c14;
+  --surface-card:  #ffffff;
+  --surface-bg:    #f0fdf4;
+  --text-primary:  #0a1f12;
+  --text-secondary:#334155;
+  --text-muted:    #64748b;
+  --accent-glow:   rgba(34, 197, 94, 0.2);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+  background: var(--surface-bg);
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(13, 74, 42, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(8, 145, 178, 0.07) 0%, transparent 50%);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Sora', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--earth-mint); border-radius: 3px; }
+
+/* Earth glow animation */
+@keyframes earthPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.15), 0 0 40px rgba(8, 145, 178, 0.08); }
+  50% { box-shadow: 0 0 30px rgba(34, 197, 94, 0.25), 0 0 60px rgba(8, 145, 178, 0.15); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in { animation: fadeSlideIn 0.4s ease-out forwards; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+
+/* Premium UI Utilities */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(34, 197, 94, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(10, 42, 26, 0.05);
+}
+
+.glass-navbar {
+  background: rgba(10, 42, 26, 0.85);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+.earth-gradient {
+  background: linear-gradient(135deg, var(--earth-deep) 0%, var(--earth-forest) 100%);
+}
+
+.ocean-gradient {
+  background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-blue) 100%);
+}
+
+.accent-gradient {
+  background: linear-gradient(135deg, var(--earth-emerald), var(--ocean-teal));
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--earth-emerald), var(--ocean-sky));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hover-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover-glow:hover {
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.input-premium {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(134, 239, 172, 0.2);
+  color: white;
+  transition: all 0.2s ease;
+}
+.input-premium:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--earth-emerald);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+}
