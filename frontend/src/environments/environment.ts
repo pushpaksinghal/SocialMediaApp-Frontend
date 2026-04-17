@@ -1,10 +1,10 @@
 export const environment = {
-  production: false,
-  authApi:    'http://localhost:5288/api/auth',
-  postApi:    'http://localhost:5111/api/posts',
-  feedApi:    'http://localhost:5001/api/feed',
-  likeApi:    'http://localhost:5074/api/likes',
-  commentApi: 'http://localhost:5016/api/comments',
-  followApi:  'http://localhost:5257/api/follows',
-  notifApi:   'http://localhost:5031/api/notifications',
+  production: true,
+  authApi:    'https://connectsphere-auth-api.onrender.com/api/auth',
+  postApi:    'https://connectsphere-post-api.onrender.com/api/posts',
+  feedApi:    'https://commentsphere-feed-api.onrender.com/api/feed',
+  likeApi:    'https://commentsphere-like-api.onrender.com/api/likes',
+  commentApi: 'https://connectsphere-comment-api.onrender.com/api/comments',
+  followApi:  'https://connectsphere-follow-api.onrender.com/api/follows',
+  notifApi:   'https://connectsphere-notif-api.onrender.com/api/notifications',
 };
